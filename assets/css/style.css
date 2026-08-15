@@ -1,0 +1,385 @@
+/* ==========================================================================
+   SOLVITAS ANALYTICS - ULTRA-MODERN LIGHT THEME DESIGN SYSTEM
+   Professional, High-Trust Fintech & Wealth Aesthetics
+   ========================================================================== */
+
+:root {
+    --sol-primary: #0A1B3F;
+    --sol-navy: #0A1B3F;
+    --sol-teal: #0D9488;
+    --sol-teal-dark: #0F766E;
+    --sol-teal-light: #CCFBF1;
+    --sol-emerald: #10B981;
+    --sol-indigo: #4F46E5;
+    --sol-purple: #7C3AED;
+    --sol-sky: #0284C7;
+    
+    --sol-bg-white: #FFFFFF;
+    --sol-bg-canvas: #F8FAFC;
+    --sol-bg-subtle: #F1F5F9;
+    --sol-bg-card: #FFFFFF;
+    
+    --sol-text-main: #0F172A;
+    --sol-text-muted: #64748B;
+    --sol-text-light: #94A3B8;
+    
+    --sol-border: #E2E8F0;
+    --sol-border-strong: #CBD5E1;
+    
+    --sol-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --sol-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --sol-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    --sol-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    --sol-shadow-glow: 0 0 25px rgba(13, 148, 136, 0.15);
+}
+
+/* Global Reset & Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--sol-bg-canvas);
+    color: var(--sol-text-main);
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--sol-navy);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    color: #334155;
+    font-weight: 500;
+    padding: 0.5rem 0.25rem;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--sol-teal-dark);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sol-teal), var(--sol-indigo));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Clean Card Styles */
+.sol-card {
+    background: #FFFFFF;
+    border: 1px solid var(--sol-border);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: var(--sol-shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sol-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sol-shadow-xl);
+    border-color: #CBD5E1;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    background: #FFFFFF;
+    border: 1px solid var(--sol-border);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: var(--sol-shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sol-shadow-xl);
+    border-color: var(--sol-teal);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--sol-teal);
+    box-shadow: var(--sol-shadow-glow), var(--sol-shadow-lg);
+}
+
+/* Category Filter Pills */
+.filter-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    color: #475569;
+    background: #F1F5F9;
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+}
+
+.filter-btn.active {
+    background: var(--sol-navy);
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(10, 27, 63, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+    transition: all 0.25s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.45);
+    background: linear-gradient(135deg, #0F766E 0%, #115E59 100%);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    background: #FFFFFF;
+    color: var(--sol-navy);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border: 1px solid var(--sol-border-strong);
+    box-shadow: var(--sol-shadow-sm);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #F8FAFC;
+    border-color: #94A3B8;
+    transform: translateY(-2px);
+}
+
+/* Form Controls */
+.sol-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--sol-border);
+    background: #FFFFFF;
+    color: var(--sol-text-main);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.sol-input:focus {
+    outline: none;
+    border-color: var(--sol-teal);
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+/* Toast Notifications */
+#solvitasToastContainer {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    pointer-events: none;
+}
+
+.sol-toast {
+    pointer-events: auto;
+    min-width: 320px;
+    max-width: 420px;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    background: #FFFFFF;
+    border-left: 4px solid var(--sol-teal);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sol-toast.error {
+    border-left-color: #EF4444;
+}
+
+@keyframes toastSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.75rem;
+    left: 1.75rem;
+    z-index: 40;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    background: #25D366;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    color: #FFFFFF;
+}
+
+/* Floating Quick Lead Trigger Button */
+.quick-lead-float {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    z-index: 40;
+    padding: 0.75rem 1.25rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #0A1B3F, #1E293B);
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(10, 27, 63, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.quick-lead-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(10, 27, 63, 0.45);
+}
+
+/* Modal Popup Styles */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-dialog {
+    background: #FFFFFF;
+    border-radius: 1.25rem;
+    max-width: 32rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-dialog {
+    transform: scale(1);
+}
+
+/* User Agreement / Signature Canvas */
+.sig-canvas-wrap {
+    border: 1px solid #CBD5E1;
+    border-radius: 0.5rem;
+    background: #FFFFFF;
+    position: relative;
+}
+
+.sig-canvas-wrap canvas {
+    width: 100%;
+    height: 140px;
+    touch-action: none;
+    border-radius: 0.5rem;
+}
+
+/* SEBI Regulatory Notice Box */
+.sebi-alert-box {
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-left: 4px solid #F59E0B;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    color: #92400E;
+    font-size: 0.875rem;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}

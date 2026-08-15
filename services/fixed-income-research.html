@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Income Research Services | Solvitas Analytics - SEBI Registered</title>
+    <meta name="description" content="Research on bonds, debentures, and fixed-income instruments focusing on credit quality, interest-rate risk, and suitability without return promises.">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-teal-500 selection:text-white">
+
+    <div id="solvitas-topbar"></div>
+    <div id="solvitas-header"></div>
+
+    <main class="min-h-screen">
+
+        <!-- Hero Section -->
+        <section class="py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-teal-50/20 border-b border-slate-200">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6">
+                    <i class="fa-solid fa-building-columns text-teal-600"></i>
+                    <span>Debt & Credit Quality Analysis</span>
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                    Fixed Income <span class="text-teal-700">Research Service</span>
+                </h1>
+                <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                    Research on bonds, debentures and fixed-income instruments with a focus on credit quality, interest-rate risk and suitability — not on guaranteed return promises.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="../pricing.html" class="btn-primary py-3 px-8 text-sm">
+                        <span>View Pricing Plans</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <button onclick="openLeadModal('Fixed Income Research Inquiry')" class="btn-secondary py-3 px-8 text-sm">
+                        <span>Request Callback</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Details Grid -->
+        <section class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+                <div class="sol-card p-8">
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4">Who is this service for?</h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                        This service is intended for investors evaluating listed bonds, debentures and fixed-income products who want structured research on risk and suitability rather than return promises.
+                    </p>
+                    <ul class="space-y-2 list-disc pl-5 text-slate-700 text-sm">
+                        <li>Conservative or moderate-risk investors exploring fixed-income options</li>
+                        <li>Clients concerned about issuer quality and credit risk</li>
+                        <li>Investors aiming for balanced asset allocation across debt and equity</li>
+                    </ul>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="sol-card p-8 bg-emerald-50/20 border-emerald-100">
+                        <h3 class="text-lg font-bold text-emerald-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>What You Receive</span>
+                        </h3>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                            <li>✔ Research on issuer credit quality and rating movements</li>
+                            <li>✔ Analysis of coupon, yield, maturity, call/put options and structure</li>
+                            <li>✔ Interest-rate risk, reinvestment risk and duration awareness notes</li>
+                            <li>✔ Comparison across similar instruments for risk–return profile</li>
+                            <li>✔ Suitability view based on time horizon and risk tolerance</li>
+                        </ul>
+                    </div>
+
+                    <div class="sol-card p-8 bg-rose-50/20 border-rose-100">
+                        <h3 class="text-lg font-bold text-rose-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-xmark text-rose-600"></i>
+                            <span>What We Do NOT Do</span>
+                        </h3>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                            <li>✘ No deposits are accepted or collected by us</li>
+                            <li>✘ No guarantee of principal, interest or yields</li>
+                            <li>✘ No misrepresentation of credit rating or risk profile</li>
+                            <li>✘ No execution or distribution of bonds or FDs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sebi-alert-box">
+                    <strong class="block mb-1 font-bold text-rose-900">Standard Debt & Credit Warning:</strong>
+                    Fixed-income instruments are subject to interest rate risk, credit/default risk, and liquidity risk. Past rating history or yields do not guarantee safety or future returns.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="solvitas-footer"></div>
+    <div id="solvitas-modal-container"></div>
+    <div id="solvitas-floating-widgets"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

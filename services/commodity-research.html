@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commodity Research Services | Solvitas Analytics - SEBI Registered</title>
+    <meta name="description" content="Research insights on major commodities and MCX contracts with a clear focus on risk, volatility, and disciplined trading frameworks.">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-teal-500 selection:text-white">
+
+    <div id="solvitas-topbar"></div>
+    <div id="solvitas-header"></div>
+
+    <main class="min-h-screen">
+
+        <!-- Hero Section -->
+        <section class="py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-teal-50/20 border-b border-slate-200">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider mb-6">
+                    <i class="fa-solid fa-coins text-amber-600"></i>
+                    <span>MCX & Commodity Analytics</span>
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                    Commodity <span class="text-amber-700">Research Service</span>
+                </h1>
+                <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                    Research insights on major commodities and MCX contracts with a clear focus on risk, volatility and disciplined trading frameworks.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="../pricing.html" class="btn-primary py-3 px-8 text-sm">
+                        <span>View Commodity Pricing</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <button onclick="openLeadModal('Commodity Research Inquiry')" class="btn-secondary py-3 px-8 text-sm">
+                        <span>Request Callback</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Details Grid -->
+        <section class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+                <div class="sol-card p-8">
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4">Who is this service for?</h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                        This service is designed for clients who actively trade or track commodity futures and options and understand the high volatility, leverage and event-driven risks involved in commodity markets.
+                    </p>
+                    <ul class="space-y-2 list-disc pl-5 text-slate-700 text-sm">
+                        <li>Active MCX traders in Crude Oil, Gold, Silver, Natural Gas, etc.</li>
+                        <li>Traders comfortable with overnight gaps and macro-driven moves</li>
+                        <li>Participants seeking structured research, not guaranteed profit calls</li>
+                    </ul>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="sol-card p-8 bg-emerald-50/20 border-emerald-100">
+                        <h3 class="text-lg font-bold text-emerald-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>What You Receive</span>
+                        </h3>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                            <li>✔ Technical research on key commodities and MCX contracts</li>
+                            <li>✔ Support–resistance, breakout and trend-following setups</li>
+                            <li>✔ Entry, stop-loss and review levels as per research framework</li>
+                            <li>✔ Volatility and event-risk notes around global data releases</li>
+                            <li>✔ Risk rating and suggested holding style (intraday / positional)</li>
+                        </ul>
+                    </div>
+
+                    <div class="sol-card p-8 bg-rose-50/20 border-rose-100">
+                        <h3 class="text-lg font-bold text-rose-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-xmark text-rose-600"></i>
+                            <span>What We Do NOT Do</span>
+                        </h3>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                            <li>✘ No trade execution or order placement on client behalf</li>
+                            <li>✘ No guarantee of profit per lot or per contract</li>
+                            <li>✘ No claims of risk-free or one-way trading opportunities</li>
+                            <li>✘ No PMS, AIF or fund management activity under this service</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sebi-alert-box">
+                    <strong class="block mb-1 font-bold text-rose-900">Standard Commodity Risk Disclosure:</strong>
+                    Trading in commodity futures involves significant leverage and high market risk. Prices can be impacted by international events, geopolitical risks, currency fluctuations, and government regulations. Past performance does not guarantee future results.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="solvitas-footer"></div>
+    <div id="solvitas-modal-container"></div>
+    <div id="solvitas-floating-widgets"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

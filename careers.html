@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers & Openings | Solvitas Analytics - SEBI Registered</title>
+    <meta name="description" content="Join Solvitas Analytics. Explore career opportunities in equity research, client relationship management, and market analysis.">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-teal-500 selection:text-white">
+
+    <div id="solvitas-topbar"></div>
+    <div id="solvitas-header"></div>
+
+    <main class="min-h-screen">
+
+        <!-- Hero Section -->
+        <section class="py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-teal-50/20 border-b border-slate-200">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6">
+                    <i class="fa-solid fa-briefcase text-teal-600"></i>
+                    <span>Careers at Solvitas Analytics</span>
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                    Build Research. <span class="text-teal-700">Build Credibility.</span>
+                </h1>
+                <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                    Join a research-first, compliance-aligned analytics firm where clarity, discipline and long-term thinking define how we work.
+                </p>
+            </div>
+        </section>
+
+        <!-- Why Work With Us -->
+        <section class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Why You’ll Love Working at Solvitas</h2>
+                    <p class="text-slate-500 text-sm mt-1">Meaningful work is built on clarity, ethics, and long-term thinking.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="sol-card p-6">
+                        <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-lg mb-3">📈</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Growth-Oriented Culture</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">Structured learning and mentorship-driven career growth paths.</p>
+                    </div>
+
+                    <div class="sol-card p-6">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-lg mb-3">💡</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Empowerment & Innovation</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">Ideas encouraged when grounded in quantitative logic and compliance.</p>
+                    </div>
+
+                    <div class="sol-card p-6">
+                        <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center font-bold text-lg mb-3">🤝</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Collaborative Teams</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">Team-first culture with shared accountability and integrity.</p>
+                    </div>
+
+                    <div class="sol-card p-6">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg mb-3">⚖️</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Work-Life Balance</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">Sustainable performance through balance, clarity, and discipline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Openings -->
+        <section class="py-16 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Current Openings</h2>
+                    <p class="text-slate-600 text-sm mt-1">Explore available opportunities across our Mumbai offices.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6" id="jobsListContainer">
+                    <!-- Dynamic rendering by JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Job Description Modal -->
+    <div id="jobDetailModal" class="modal-overlay" onclick="closeJobDetailModalOnBackdrop(event)">
+        <div class="modal-dialog p-6 sm:p-8 max-w-2xl relative">
+            <button onclick="closeJobDetailModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-full hover:bg-slate-100 transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="jobDetailModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Apply Modal -->
+    <div id="jobApplyModal" class="modal-overlay" onclick="closeJobApplyModalOnBackdrop(event)">
+        <div class="modal-dialog p-6 sm:p-8 max-w-lg relative">
+            <button onclick="closeJobApplyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-full hover:bg-slate-100 transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <div class="mb-6">
+                <span class="text-xs font-bold text-teal-700 uppercase">Application Form</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-1" id="applyJobTitleHeader">Apply for Position</h3>
+                <p class="text-slate-500 text-xs mt-1" id="applyJobMetaSubtitle"></p>
+            </div>
+
+            <form data-lead-form class="space-y-4">
+                <input type="hidden" name="form_type" value="Career Application">
+                <input type="hidden" name="source_page" id="careerSourcePage" value="Careers Page">
+                <input type="hidden" name="service" id="careerJobAppliedFor" value="Job Application">
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name <span class="text-rose-500">*</span></label>
+                    <input type="text" name="name" required placeholder="Your full name" class="sol-input">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number <span class="text-rose-500">*</span></label>
+                        <input type="tel" name="phone" required placeholder="Mobile number" pattern="[0-9]{10}" class="sol-input">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address <span class="text-rose-500">*</span></label>
+                        <input type="email" name="email" required placeholder="Email" class="sol-input">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Experience</label>
+                        <select name="experience" class="sol-input bg-white">
+                            <option value="0–1 yrs">0–1 yrs</option>
+                            <option value="1–3 yrs">1–3 yrs</option>
+                            <option value="3–5 yrs">3–5 yrs</option>
+                            <option value="5+ yrs">5+ yrs</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Highest Qualification</label>
+                        <input type="text" name="capital" placeholder="e.g. MBA / CFA / Graduate" class="sol-input">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Cover Note / LinkedIn Profile</label>
+                    <textarea name="message" rows="3" placeholder="Share your LinkedIn URL or brief introduction..." class="sol-input resize-none"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full btn-primary py-3 text-sm">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        <span>Submit Application</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="solvitas-footer"></div>
+    <div id="solvitas-modal-container"></div>
+    <div id="solvitas-floating-widgets"></div>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+    const jobsData = [
+        {
+            id: 0,
+            title: "Research Analyst",
+            location: "Navi Mumbai / Malad",
+            type: "Full Time",
+            department: "Research & Analytics",
+            experience: "2+ years",
+            email: "careers@solvitasanalytics.com",
+            about: "Solvitas Analytics is looking for a qualified Research Analyst to build quantitative valuation models and deliver compliance-aligned research reports.",
+            responsibilities: [
+                "Analyze financial statements, balance sheets, and sector data.",
+                "Prepare equity positional research notes and technical setups.",
+                "Ensure strict adherence to SEBI RA regulations."
+            ],
+            skills: ["MBA Finance / CFA / CA preferred", "Strong technical & fundamental acumen", "Understanding of Indian capital markets"]
+        },
+        {
+            id: 1,
+            title: "Relationship Manager",
+            location: "Navi Mumbai",
+            type: "Full Time",
+            department: "Client Advisory Support",
+            experience: "2–4 years",
+            email: "careers@solvitasanalytics.com",
+            about: "Responsible for managing and assisting client onboarding, query handling, and post-subscription advisory communication.",
+            responsibilities: [
+                "Build and nurture long-term client relationships.",
+                "Ensure seamless onboarding and regulatory documentation.",
+                "Assist clients in understanding research updates."
+            ],
+            skills: ["Excellent verbal and written communication", "Client-centric mindset", "Basic market awareness"]
+        },
+        {
+            id: 2,
+            title: "Senior Relationship Manager",
+            location: "Navi Mumbai",
+            type: "Full Time",
+            department: "Client Advisory Support",
+            experience: "5+ years",
+            email: "careers@solvitasanalytics.com",
+            about: "Manage high-value advisory accounts and mentor junior support personnel.",
+            responsibilities: [
+                "Handle key client relationships and inquiries.",
+                "Drive client retention and service satisfaction.",
+                "Supervise team documentation and compliance adherence."
+            ],
+            skills: ["Proven leadership track record", "Strong capital market knowledge", "High ethical standards"]
+        },
+        {
+            id: 3,
+            title: "Assistant Relationship Manager",
+            location: "Navi Mumbai",
+            type: "Full Time",
+            department: "Client Operations",
+            experience: "1–2 years",
+            email: "careers@solvitasanalytics.com",
+            about: "Coordinate client queries, follow-ups, and operational tasks.",
+            responsibilities: [
+                "Client documentation and query coordination.",
+                "Maintain internal logs and audit records.",
+                "Assist relationship managers with daily operations."
+            ],
+            skills: ["Strong attention to detail", "Good communication skills", "Willingness to learn"]
+        },
+        {
+            id: 4,
+            title: "Stock Market Trainer",
+            location: "Navi Mumbai",
+            type: "Full Time",
+            department: "Investor Education",
+            experience: "3+ years",
+            email: "careers@solvitasanalytics.com",
+            about: "Deliver structured stock market education, webinars, and analytical training sessions.",
+            responsibilities: [
+                "Conduct engaging educational sessions on technical & fundamental analysis.",
+                "Explain complex risk-management concepts simply.",
+                "Create educational curriculum and study materials."
+            ],
+            skills: ["Demonstrated teaching and public speaking skills", "Deep technical analysis knowledge", "NISM certifications preferred"]
+        }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('jobsListContainer');
+        if (container) {
+            container.innerHTML = jobsData.map(job => `
+                <div class="sol-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <h3 class="text-lg font-bold text-slate-900">${job.title}</h3>
+                            <span class="px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 text-xs font-semibold border border-teal-100">${job.type}</span>
+                        </div>
+                        <p class="text-slate-500 text-xs mb-4">
+                            <i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> ${job.location} &bull; Exp: ${job.experience}
+                        </p>
+                        <p class="text-slate-600 text-xs leading-relaxed line-clamp-2 mb-6">${job.about}</p>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                        <button onclick="openJobDetailModal(${job.id})" class="text-xs font-bold text-teal-700 hover:text-teal-800 transition">
+                            View Details &rarr;
+                        </button>
+                        <button onclick="openJobApplyModal(${job.id})" class="btn-primary text-xs py-2 px-5">
+                            Apply Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+    });
+
+    function openJobDetailModal(id) {
+        const job = jobsData[id];
+        const modal = document.getElementById('jobDetailModal');
+        const body = document.getElementById('jobDetailModalBody');
+        if (!job || !modal || !body) return;
+
+        body.innerHTML = `
+            <div class="mb-4">
+                <span class="px-2.5 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-bold border border-teal-100">${job.department}</span>
+                <h3 class="text-2xl font-bold text-slate-900 mt-2">${job.title}</h3>
+                <p class="text-slate-500 text-xs mt-0.5"><i class="fa-solid fa-location-dot text-teal-600 mr-1"></i> ${job.location} &bull; ${job.type} &bull; Experience: ${job.experience}</p>
+            </div>
+
+            <div class="space-y-4 text-xs text-slate-700 leading-relaxed border-t border-slate-100 pt-4">
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">About the Role</h4>
+                    <p class="text-slate-600">${job.about}</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-2">Key Responsibilities</h4>
+                    <ul class="space-y-1.5 list-disc pl-4 text-slate-600">
+                        ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-2">Required Qualifications & Skills</h4>
+                    <ul class="space-y-1.5 list-disc pl-4 text-slate-600">
+                        ${job.skills.map(s => `<li>${s}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end gap-3">
+                <button onclick="closeJobDetailModal()" class="btn-secondary py-2 px-4 text-xs">Close</button>
+                <button onclick="closeJobDetailModal(); openJobApplyModal(${job.id})" class="btn-primary py-2 px-6 text-xs">Apply For This Job</button>
+            </div>
+        `;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeJobDetailModal() {
+        const modal = document.getElementById('jobDetailModal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    function closeJobDetailModalOnBackdrop(e) {
+        if (e.target && e.target.id === 'jobDetailModal') closeJobDetailModal();
+    }
+
+    function openJobApplyModal(id) {
+        const job = jobsData[id];
+        const modal = document.getElementById('jobApplyModal');
+        if (!job || !modal) return;
+
+        document.getElementById('applyJobTitleHeader').textContent = 'Apply for ' + job.title;
+        document.getElementById('applyJobMetaSubtitle').textContent = job.department + ' • ' + job.location;
+        document.getElementById('careerJobAppliedFor').value = 'Job Application: ' + job.title;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeJobApplyModal() {
+        const modal = document.getElementById('jobApplyModal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    function closeJobApplyModalOnBackdrop(e) {
+        if (e.target && e.target.id === 'jobApplyModal') closeJobApplyModal();
+    }
+    </script>
+</body>
+</html>
