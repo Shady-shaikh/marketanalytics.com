@@ -326,47 +326,47 @@ function initSolvitasComponents() {
     
     modalContainer.innerHTML = `
         <div id="solvitasGlobalLeadModal" class="modal-overlay" onclick="closeLeadModalOnBackdrop(event)">
-            <div class="modal-dialog p-6 sm:p-8 relative bg-white border border-slate-200">
+            <div class="modal-dialog p-5 sm:p-7 relative bg-white border border-slate-200">
                 <!-- Close Button -->
-                <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-full hover:bg-slate-100 transition" aria-label="Close modal">
+                <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-slate-100 transition" aria-label="Close modal">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
 
                 <!-- Modal Header -->
-                <div class="mb-6">
-                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-semibold border border-teal-200 mb-2">
+                <div class="mb-4">
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 text-[11px] font-semibold border border-teal-200 mb-1.5">
                         <i class="fa-solid fa-shield-halved"></i>
                         <span>SEBI Reg No: ${SOLVITAS_CONFIG.company.sebiRegNumber}</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900" id="modalFormTitle">Request Research Advisory</h3>
-                    <p class="text-slate-500 text-xs mt-1">Get high-conviction research calls and market recommendations directly from certified analysts.</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900" id="modalFormTitle">Request Research Advisory</h3>
+                    <p class="text-slate-500 text-xs mt-0.5">High-conviction research calls and market recommendations directly from certified analysts.</p>
                 </div>
 
                 <!-- Form -->
-                <form id="globalLeadModalForm" onsubmit="handleLeadFormSubmit(event, this)" class="space-y-4">
+                <form id="globalLeadModalForm" onsubmit="handleLeadFormSubmit(event, this)" class="space-y-3">
                     <input type="hidden" name="form_type" value="Lead Popup Modal">
                     <input type="hidden" name="source_page" id="modalSourcePage" value="${window.location.href}">
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name <span class="text-rose-500">*</span></label>
-                        <input type="text" name="name" required placeholder="e.g. Rahul Sharma" class="sol-input">
+                        <input type="text" name="name" required placeholder="e.g. Rahul Sharma" class="sol-input py-2 text-xs sm:text-sm">
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number <span class="text-rose-500">*</span></label>
-                            <input type="tel" name="phone" required placeholder="10-digit Mobile No." pattern="[0-9]{10}" class="sol-input">
+                            <input type="tel" name="phone" required placeholder="10-digit Mobile No." pattern="[0-9]{10}" class="sol-input py-2 text-xs sm:text-sm">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
-                            <input type="email" name="email" placeholder="rahul@example.com" class="sol-input">
+                            <input type="email" name="email" placeholder="rahul@example.com" class="sol-input py-2 text-xs sm:text-sm">
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Research Segment</label>
-                            <select name="service" class="sol-input bg-white">
+                            <select name="service" class="sol-input py-2 text-xs sm:text-sm bg-white">
                                 <option value="Equity Intraday">Equity Intraday</option>
                                 <option value="Options Trading">Options Trading (Nifty/BankNifty)</option>
                                 <option value="Futures Trading">Stock & Index Futures</option>
@@ -378,7 +378,7 @@ function initSolvitasComponents() {
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Trading Capital Bracket</label>
-                            <select name="capital" class="sol-input bg-white">
+                            <select name="capital" class="sol-input py-2 text-xs sm:text-sm bg-white">
                                 <option value="₹1 Lakh - ₹3 Lakh">₹1 Lakh - ₹3 Lakh</option>
                                 <option value="₹3 Lakh - ₹5 Lakh">₹3 Lakh - ₹5 Lakh</option>
                                 <option value="₹5 Lakh - ₹10 Lakh">₹5 Lakh - ₹10 Lakh</option>
@@ -389,17 +389,17 @@ function initSolvitasComponents() {
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 mb-1">Trading Queries / Comments</label>
-                        <textarea name="message" rows="2" placeholder="Tell us your requirements or trading style..." class="sol-input resize-none"></textarea>
+                        <textarea name="message" rows="2" placeholder="Tell us your requirements or trading style..." class="sol-input py-2 text-xs sm:text-sm resize-none"></textarea>
                     </div>
 
-                    <div class="pt-2">
-                        <button type="submit" class="w-full btn-primary py-3 text-sm">
+                    <div class="pt-1">
+                        <button type="submit" class="w-full btn-primary py-2.5 text-xs sm:text-sm font-bold">
                             <i class="fa-solid fa-paper-plane text-xs"></i>
                             <span>Submit Request</span>
                         </button>
                     </div>
 
-                    <div class="text-[11px] text-slate-400 text-center flex items-center justify-center gap-1.5">
+                    <div class="text-[11px] text-slate-400 text-center flex items-center justify-center gap-1.5 pt-0.5">
                         <i class="fa-solid fa-lock text-[10px]"></i>
                         <span>100% Privacy Protected. No spam guaranteed.</span>
                     </div>

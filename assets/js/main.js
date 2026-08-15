@@ -6,12 +6,16 @@
 // ----------------------------------------------------
 // 1. Modal Controller
 // ----------------------------------------------------
-function openLeadModal(title) {
+function openLeadModal(sourceContext = 'Advisory Inquiry') {
     const modal = document.getElementById('solvitasGlobalLeadModal');
     if (modal) {
-        if (title) {
-            const titleEl = document.getElementById('modalFormTitle');
-            if (titleEl) titleEl.textContent = title;
+        const titleEl = document.getElementById('modalFormTitle');
+        if (titleEl) {
+            titleEl.textContent = 'Request Research Advisory';
+        }
+        const sourceInput = document.getElementById('modalSourcePage');
+        if (sourceInput && sourceContext) {
+            sourceInput.value = `${window.location.href} [${sourceContext}]`;
         }
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
