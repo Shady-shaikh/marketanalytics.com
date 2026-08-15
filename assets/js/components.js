@@ -34,34 +34,36 @@ function initSolvitasComponents() {
     const topBarEl = document.getElementById('solvitas-topbar');
     if (topBarEl) {
         topBarEl.innerHTML = `
-            <div class="w-full bg-slate-50 border-b border-slate-200 text-xs text-slate-600 font-medium">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between py-2">
-                    <div class="flex items-center gap-6">
-                        <div class="flex items-center gap-1.5">
-                            <i class="fa-regular fa-clock text-teal-600 text-sm"></i>
+            <div class="w-full bg-[#06182B] text-slate-300 border-b border-slate-800 text-xs font-medium">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between py-2.5 gap-2">
+                    <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+                        <div class="flex items-center gap-1.5 text-slate-300">
+                            <i class="fa-regular fa-clock text-teal-400"></i>
                             <span>${SOLVITAS_CONFIG.contact.workingHours}</span>
                         </div>
-                        <div class="flex items-center gap-1.5">
-                            <i class="fa-solid fa-phone text-teal-600 text-sm"></i>
-                            <a href="tel:${SOLVITAS_CONFIG.contact.primaryPhone}" class="hover:text-teal-700 transition">${SOLVITAS_CONFIG.contact.primaryPhone}</a>
+                        <div class="flex items-center gap-1.5 text-slate-300">
+                            <i class="fa-solid fa-phone text-teal-400"></i>
+                            <a href="tel:${SOLVITAS_CONFIG.contact.primaryPhone}" class="hover:text-teal-300 transition font-medium">${SOLVITAS_CONFIG.contact.primaryPhone}</a>
                         </div>
-                        <div class="hidden md:flex items-center gap-1.5 text-slate-500">
-                            <span class="px-2 py-0.5 rounded bg-teal-50 text-teal-700 text-[11px] font-semibold border border-teal-200">
+                        <div class="hidden md:flex items-center gap-1.5">
+                            <span class="px-2.5 py-0.5 rounded-full bg-teal-950/80 text-teal-300 text-[11px] font-semibold border border-teal-500/30 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
                                 SEBI Reg: ${SOLVITAS_CONFIG.company.sebiRegNumber}
                             </span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-4 mt-1 sm:mt-0">
-                        <div class="flex items-center gap-1.5">
-                            <i class="fa-regular fa-envelope text-teal-600 text-sm"></i>
-                            <a href="mailto:${SOLVITAS_CONFIG.contact.supportEmail}" class="hover:text-teal-700 transition">${SOLVITAS_CONFIG.contact.supportEmail}</a>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-1.5 text-slate-300">
+                            <i class="fa-regular fa-envelope text-teal-400"></i>
+                            <a href="mailto:${SOLVITAS_CONFIG.contact.supportEmail}" class="hover:text-teal-300 transition">${SOLVITAS_CONFIG.contact.supportEmail}</a>
                         </div>
-                        <div class="h-3.5 w-px bg-slate-300"></div>
-                        <div class="flex items-center gap-3 text-slate-500">
-                            <a href="${SOLVITAS_CONFIG.social.facebook}" target="_blank" class="hover:text-teal-600 transition" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="${SOLVITAS_CONFIG.social.twitter}" target="_blank" class="hover:text-teal-600 transition" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="${SOLVITAS_CONFIG.social.linkedin}" target="_blank" class="hover:text-teal-600 transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="${SOLVITAS_CONFIG.social.youtube}" target="_blank" class="hover:text-teal-600 transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <div class="h-3 w-px bg-slate-700 hidden sm:block"></div>
+                        <div class="flex items-center gap-3 text-slate-400">
+                            <a href="${SOLVITAS_CONFIG.social.facebook}" target="_blank" rel="noopener" class="hover:text-teal-400 transition" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                            <a href="${SOLVITAS_CONFIG.social.instagram}" target="_blank" rel="noopener" class="hover:text-teal-400 transition" aria-label="Instagram"><i class="fa-brands fa-instagram text-xs"></i></a>
+                            <a href="${SOLVITAS_CONFIG.social.twitter}" target="_blank" rel="noopener" class="hover:text-teal-400 transition" aria-label="Twitter"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+                            <a href="${SOLVITAS_CONFIG.social.linkedin}" target="_blank" rel="noopener" class="hover:text-teal-400 transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+                            <a href="${SOLVITAS_CONFIG.social.youtube}" target="_blank" rel="noopener" class="hover:text-teal-400 transition" aria-label="YouTube"><i class="fa-brands fa-youtube text-xs"></i></a>
                         </div>
                     </div>
                 </div>
@@ -82,7 +84,7 @@ function initSolvitasComponents() {
 
         const mobileNavItemsHtml = SOLVITAS_CONFIG.navigation.mainMenu.map(item => {
             const fullHref = isServiceSubdir ? (base + item.href) : item.href;
-            return `<a href="${fullHref}" class="py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-teal-600 transition font-medium">${item.title}</a>`;
+            return `<a href="${fullHref}" class="py-2.5 px-3 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 transition font-medium">${item.title}</a>`;
         }).join('');
 
         headerEl.innerHTML = `
@@ -90,23 +92,23 @@ function initSolvitasComponents() {
                 <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                     <!-- Logo -->
                     <a href="${base}index.html" class="flex items-center gap-3">
-                        <img src="${base}assets/img/logo-solvitas.png" class="h-10 w-auto" alt="${SOLVITAS_CONFIG.company.brandName}" onerror="this.src='${base}assets/img/favicon.png'; this.classList.add('h-8');">
+                        <img src="${base}assets/img/logo-solvitas.png" class="h-11 w-auto" alt="${SOLVITAS_CONFIG.company.brandName}" onerror="this.src='${base}assets/img/favicon.png'; this.classList.add('h-8');">
                     </a>
 
                     <!-- Desktop Menu -->
-                    <div class="hidden lg:flex items-center gap-8">
+                    <div class="hidden lg:flex items-center gap-7">
                         ${navItemsHtml}
                     </div>
 
                     <!-- Right CTA & Mobile Toggle -->
-                    <div class="flex items-center gap-4">
-                        <button onclick="openLeadModal('Header CTA')" class="btn-primary text-xs sm:text-sm py-2 sm:py-2.5 px-4 sm:px-6">
-                            <i class="fa-solid fa-bolt text-teal-200"></i>
+                    <div class="flex items-center gap-3.5">
+                        <button onclick="openLeadModal('Header CTA')" class="btn-primary text-xs sm:text-sm py-2.5 px-5 sm:px-6">
+                            <i class="fa-solid fa-chart-line text-teal-200"></i>
                             <span>Get Free Research</span>
                         </button>
 
                         <!-- Mobile Hamburger Button -->
-                        <button id="solvitasMobileMenuBtn" class="lg:hidden p-2.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-100 transition" aria-label="Toggle navigation">
+                        <button id="solvitasMobileMenuBtn" class="lg:hidden p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition" aria-label="Toggle navigation">
                             <i id="solvitasMenuIconOpen" class="fa-solid fa-bars text-lg"></i>
                             <i id="solvitasMenuIconClose" class="fa-solid fa-xmark text-lg hidden"></i>
                         </button>
@@ -118,8 +120,8 @@ function initSolvitasComponents() {
                     <div class="flex flex-col gap-1 py-4 text-sm">
                         ${mobileNavItemsHtml}
                         <div class="pt-3 mt-2 border-t border-slate-100 flex flex-col gap-2">
-                            <a href="${base}bank-details.html" class="py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-100 font-medium">Bank & Payment Details</a>
-                            <a href="${base}contact.html" class="py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-100 font-medium">Contact & Grievance</a>
+                            <a href="${base}bank-details.html" class="py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-50 font-medium">Bank & Payment Details</a>
+                            <a href="${base}contact.html" class="py-2 px-3 rounded-lg text-slate-700 hover:bg-slate-50 font-medium">Contact & Grievance</a>
                         </div>
                     </div>
                 </div>
@@ -151,115 +153,162 @@ function initSolvitasComponents() {
     }
 
     // ----------------------------------------------------
-    // 3. Render SEBI Compliance Footer
+    // 3. Render High-Impact Wealth Navy Footer (Matching Exact Screenshot)
     // ----------------------------------------------------
     const footerEl = document.getElementById('solvitas-footer');
     if (footerEl) {
-        const servicesLinksHtml = SOLVITAS_CONFIG.navigation.servicesMenu.map(s => {
-            const href = isServiceSubdir ? s.href.replace('services/', '') : s.href;
-            return `<li><a href="${href}" class="text-slate-600 hover:text-teal-600 transition text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-teal-500"></i> ${s.title}</a></li>`;
+        const offeringsHtml = SOLVITAS_CONFIG.navigation.servicesMenu.map(s => {
+            const href = isServiceSubdir ? s.href.replace('services/', '') : (base + s.href);
+            return `<li><a href="${href}" class="text-slate-300 hover:text-teal-400 transition text-sm flex items-center gap-1.5"><span class="text-teal-400 text-xs">›</span> ${s.title}</a></li>`;
         }).join('');
 
-        const legalLinksHtml = SOLVITAS_CONFIG.navigation.legalMenu.map(l => {
-            const href = isServiceSubdir ? (base + l.href) : l.href;
-            return `<li><a href="${href}" class="text-slate-600 hover:text-teal-600 transition text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-teal-500"></i> ${l.title}</a></li>`;
+        const companyHtml = SOLVITAS_CONFIG.navigation.companyMenu.map(c => {
+            const href = isServiceSubdir ? (base + c.href) : (base + c.href);
+            return `<li><a href="${href}" class="text-slate-300 hover:text-teal-400 transition text-sm flex items-center gap-1.5"><span class="text-teal-400 text-xs">›</span> ${c.title}</a></li>`;
+        }).join('');
+
+        const termsHtml = SOLVITAS_CONFIG.navigation.termsMenu.map(t => {
+            const href = isServiceSubdir ? (base + t.href) : (base + t.href);
+            return `<li><a href="${href}" class="text-slate-300 hover:text-teal-400 transition text-sm flex items-center gap-1.5"><span class="text-teal-400 text-xs">›</span> ${t.title}</a></li>`;
         }).join('');
 
         footerEl.innerHTML = `
-            <footer class="bg-slate-50 border-t border-slate-200 text-slate-700 pt-16 pb-12">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-200">
-                        <!-- Col 1: Brand & Regulatory Badge -->
-                        <div>
-                            <img src="${base}assets/img/logo-solvitas.png" class="h-10 w-auto mb-4" alt="${SOLVITAS_CONFIG.company.brandName}" onerror="this.src='${base}assets/img/favicon.png';">
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                                ${SOLVITAS_CONFIG.company.shortDesc}
-                            </p>
-                            <div class="p-3 bg-white rounded-xl border border-slate-200 shadow-sm text-xs space-y-1.5">
-                                <div class="font-bold text-slate-800 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-certificate text-teal-600"></i>
-                                    <span>SEBI Registered Research Analyst</span>
+            <footer class="bg-[#072844] text-white pt-16 pb-8 border-t border-teal-900/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                    <!-- Top 4 Columns Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                        <!-- Col 1: Connect With Us -->
+                        <div class="space-y-4">
+                            <a href="${base}index.html" class="inline-block mb-2">
+                                <img src="${base}assets/img/logo-solvitas.png" class="h-10 w-auto brightness-0 invert" alt="${SOLVITAS_CONFIG.company.brandName}" onerror="this.src='${base}assets/img/favicon.png';">
+                            </a>
+                            <h4 class="text-base font-bold text-white tracking-wide">Connect With Us</h4>
+                            <div class="space-y-2.5 text-sm text-slate-300">
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-phone text-teal-400 text-sm"></i>
+                                    <a href="tel:${SOLVITAS_CONFIG.contact.primaryPhone}" class="hover:text-teal-400 transition">${SOLVITAS_CONFIG.contact.primaryPhone}</a>
                                 </div>
-                                <div class="text-slate-600">Reg No: <strong class="text-slate-900 font-mono">${SOLVITAS_CONFIG.company.sebiRegNumber}</strong></div>
-                                <div class="text-slate-600">Validity: <strong class="text-emerald-700">${SOLVITAS_CONFIG.company.sebiValidity}</strong></div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                                    <a href="${SOLVITAS_CONFIG.contact.whatsappUrl}" target="_blank" rel="noopener" class="hover:text-emerald-400 transition">${SOLVITAS_CONFIG.contact.whatsappNumber}</a>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-envelope text-teal-400 text-sm"></i>
+                                    <a href="mailto:${SOLVITAS_CONFIG.contact.supportEmail}" class="hover:text-teal-400 transition">${SOLVITAS_CONFIG.contact.supportEmail}</a>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-regular fa-clock text-teal-400 text-sm"></i>
+                                    <span>${SOLVITAS_CONFIG.contact.workingHours}</span>
+                                </div>
+                            </div>
+
+                            <!-- Social Icons -->
+                            <div class="pt-3 flex flex-wrap items-center gap-2.5">
+                                <a href="${SOLVITAS_CONFIG.social.facebook}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-[#0E3A5E] hover:bg-teal-600 text-white flex items-center justify-center border border-slate-700 transition" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                                <a href="${SOLVITAS_CONFIG.social.instagram}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-[#0E3A5E] hover:bg-teal-600 text-white flex items-center justify-center border border-slate-700 transition" aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
+                                <a href="${SOLVITAS_CONFIG.social.tiktok}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-[#0E3A5E] hover:bg-teal-600 text-white flex items-center justify-center border border-slate-700 transition" aria-label="TikTok"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                                <a href="${SOLVITAS_CONFIG.social.linkedin}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-[#0E3A5E] hover:bg-teal-600 text-white flex items-center justify-center border border-slate-700 transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                                <a href="${SOLVITAS_CONFIG.social.snapchat}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-[#0E3A5E] hover:bg-teal-600 text-white flex items-center justify-center border border-slate-700 transition" aria-label="Snapchat"><i class="fa-brands fa-snapchat text-sm"></i></a>
+                                <a href="${SOLVITAS_CONFIG.social.twitter}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-[#0E3A5E] hover:bg-teal-600 text-white flex items-center justify-center border border-slate-700 transition" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter text-sm"></i></a>
                             </div>
                         </div>
 
-                        <!-- Col 2: Research Offerings -->
+                        <!-- Col 2: Company -->
                         <div>
-                            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">Research Offerings</h4>
+                            <h4 class="text-lg font-bold text-white mb-2">Company</h4>
+                            <div class="w-12 h-1 bg-teal-400 rounded-full mb-4"></div>
                             <ul class="space-y-2.5">
-                                ${servicesLinksHtml}
+                                ${companyHtml}
                             </ul>
                         </div>
 
-                        <!-- Col 3: Legal & Regulatory Disclosures -->
+                        <!-- Col 3: Offerings -->
                         <div>
-                            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">Regulatory & Compliance</h4>
+                            <h4 class="text-lg font-bold text-white mb-2">Offerings</h4>
+                            <div class="w-12 h-1 bg-teal-400 rounded-full mb-4"></div>
                             <ul class="space-y-2.5">
-                                ${legalLinksHtml.slice(0, 7)}
+                                ${offeringsHtml}
                             </ul>
                         </div>
 
-                        <!-- Col 4: Official Contact & Grievance -->
+                        <!-- Col 4: Terms & Compliance -->
                         <div>
-                            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">Official Contacts</h4>
-                            <ul class="space-y-3 text-sm text-slate-600">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-phone text-teal-600 mt-1"></i>
-                                    <div>
-                                        <div class="font-semibold text-slate-800">Support Helpline</div>
-                                        <a href="tel:${SOLVITAS_CONFIG.contact.primaryPhone}" class="hover:text-teal-600">${SOLVITAS_CONFIG.contact.primaryPhone}</a>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-regular fa-envelope text-teal-600 mt-1"></i>
-                                    <div>
-                                        <div class="font-semibold text-slate-800">Support Email</div>
-                                        <a href="mailto:${SOLVITAS_CONFIG.contact.supportEmail}" class="hover:text-teal-600">${SOLVITAS_CONFIG.contact.supportEmail}</a>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-location-dot text-teal-600 mt-1"></i>
-                                    <div>
-                                        <div class="font-semibold text-slate-800">Corporate Office</div>
-                                        <span>${SOLVITAS_CONFIG.addresses.corporate}</span>
-                                    </div>
-                                </li>
+                            <h4 class="text-lg font-bold text-white mb-2">Terms</h4>
+                            <div class="w-12 h-1 bg-teal-400 rounded-full mb-4"></div>
+                            <ul class="space-y-2.5">
+                                ${termsHtml}
                             </ul>
-
-                            <div class="mt-4 pt-3 border-t border-slate-200 flex items-center gap-3">
-                                <a href="${SOLVITAS_CONFIG.compliance.scoresPortalUrl}" target="_blank" class="text-xs px-2.5 py-1 rounded bg-white border border-slate-200 text-teal-700 font-semibold hover:bg-teal-50 transition">
-                                    SEBI SCORES ↗
-                                </a>
-                                <a href="${SOLVITAS_CONFIG.compliance.smartOdrPortalUrl}" target="_blank" class="text-xs px-2.5 py-1 rounded bg-white border border-slate-200 text-teal-700 font-semibold hover:bg-teal-50 transition">
-                                    SMART ODR ↗
-                                </a>
-                            </div>
                         </div>
+
                     </div>
 
-                    <!-- Regulatory Mandatory Warning Strip -->
-                    <div class="mt-8 p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 leading-relaxed">
-                        <strong class="font-bold text-amber-950 block mb-1">SEBI Mandatory Standard Risk Warning:</strong>
-                        ${SOLVITAS_CONFIG.compliance.disclaimerSummary}
+                    <!-- Glowing Crimson SEBI Mandatory Disclaimer Box -->
+                    <div class="p-6 rounded-2xl bg-[#09223A] border-2 border-rose-600/70 shadow-[0_0_20px_rgba(225,29,72,0.25)] text-xs text-slate-200 space-y-2.5 leading-relaxed">
+                        <p>*Disclaimer: “Registration granted by SEBI, Enlistment as RA with Exchange and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.”</p>
+                        <p>*Disclaimer: “The securities quoted (if any) on our website or advertisements are for illustration only and not recommendatory.”</p>
+                        <p>*Standard warning: “Investment in securities market are subject to market risks. Read all documents carefully before investing.”</p>
+                        <p>*Mandatory notice: “Clients shall follow Do’s & Don’ts as per SEBI master circular (SEBI/HO/MIRSD-POD-1/P/CIR/2024/49 dated May 21, 2024).”</p>
+                    </div>
+
+                    <!-- Quick Links Row -->
+                    <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-semibold text-slate-300">
+                        <span class="text-white font-bold">Quick Links:</span>
+                        <a href="https://www.sebi.gov.in" target="_blank" rel="noopener" class="hover:text-teal-400 transition">SEBI</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://www.nseindia.com" target="_blank" rel="noopener" class="hover:text-teal-400 transition">NSE</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://www.bseindia.com" target="_blank" rel="noopener" class="hover:text-teal-400 transition">BSE</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://www.mcxindia.com" target="_blank" rel="noopener" class="hover:text-teal-400 transition">MCX</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://nsdl.co.in" target="_blank" rel="noopener" class="hover:text-teal-400 transition">NSDL</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://www.cdslindia.com" target="_blank" rel="noopener" class="hover:text-teal-400 transition">CDSL</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://www.rbi.org.in" target="_blank" rel="noopener" class="hover:text-teal-400 transition">RBI</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://scores.sebi.gov.in" target="_blank" rel="noopener" class="hover:text-teal-400 transition">SEBI scores</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://smartodr.in" target="_blank" rel="noopener" class="hover:text-teal-400 transition">SMART ODR</a>
+                        <span class="text-slate-600">|</span>
+                        <a href="https://www.ckycindia.in" target="_blank" rel="noopener" class="hover:text-teal-400 transition">CKYC Awareness</a>
+                    </div>
+
+                    <!-- 3 Detailed Contact & SEBI Details Columns -->
+                    <div class="pt-6 border-t border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-8 text-xs text-slate-300">
+                        <div>
+                            <h5 class="text-sm font-bold text-white mb-2">Solvitas Analytics Pvt Ltd</h5>
+                            <p class="text-slate-400 mb-1">CIN: <span class="font-mono text-slate-200">${SOLVITAS_CONFIG.company.cin}</span></p>
+                            <p class="text-slate-300 mb-1 leading-relaxed">${SOLVITAS_CONFIG.addresses.corporate}</p>
+                            <p class="text-slate-300 mb-1">${SOLVITAS_CONFIG.contact.supportEmail}</p>
+                            <p class="text-slate-300">${SOLVITAS_CONFIG.contact.primaryPhone}</p>
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white mb-2">Nearest SEBI Office</h5>
+                            <p class="text-slate-300 mb-2 leading-relaxed">${SOLVITAS_CONFIG.addresses.nearestSebiOffice}</p>
+                            <p class="text-slate-400">${SOLVITAS_CONFIG.contact.sebiWorkingHours}</p>
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white mb-2">SEBI Research Analyst Details</h5>
+                            <p class="text-slate-300 mb-1">Registered Name: <strong class="text-white">${SOLVITAS_CONFIG.company.legalName}</strong></p>
+                            <p class="text-slate-300 mb-1">Type: <span class="text-white">${SOLVITAS_CONFIG.company.sebiCategory}</span></p>
+                            <p class="text-slate-300 mb-1">Reg No.: <strong class="text-teal-400 font-mono">${SOLVITAS_CONFIG.company.sebiRegNumber}</strong></p>
+                            <p class="text-slate-300">Validity: <strong class="text-emerald-400">${SOLVITAS_CONFIG.company.sebiValidity}</strong></p>
+                        </div>
                     </div>
 
                     <!-- Bottom Copyright Bar -->
-                    <div class="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-4">
+                    <div class="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-4">
                         <div>
                             &copy; ${new Date().getFullYear()} ${SOLVITAS_CONFIG.company.legalName}. All rights reserved.
                         </div>
-                        <div class="flex flex-wrap items-center gap-4">
-                            <a href="${base}privacy-policy.html" class="hover:text-teal-600">Privacy Policy</a>
-                            <span>&bull;</span>
-                            <a href="${base}terms-and-conditions.html" class="hover:text-teal-600">Terms & Conditions</a>
-                            <span>&bull;</span>
-                            <a href="${base}refund-policy.html" class="hover:text-teal-600">Refund Policy</a>
-                            <span>&bull;</span>
-                            <a href="${base}disclaimer.html" class="hover:text-teal-600">Legal Disclaimer</a>
+                        <div>
+                            Designed & developed with ❤️ by <span class="text-white font-semibold">Mind Your Auth</span>
                         </div>
                     </div>
+
                 </div>
             </footer>
         `;
@@ -277,7 +326,7 @@ function initSolvitasComponents() {
     
     modalContainer.innerHTML = `
         <div id="solvitasGlobalLeadModal" class="modal-overlay" onclick="closeLeadModalOnBackdrop(event)">
-            <div class="modal-dialog p-6 sm:p-8 relative">
+            <div class="modal-dialog p-6 sm:p-8 relative bg-white border border-slate-200">
                 <!-- Close Button -->
                 <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 rounded-full hover:bg-slate-100 transition" aria-label="Close modal">
                     <i class="fa-solid fa-xmark text-lg"></i>
@@ -360,7 +409,7 @@ function initSolvitasComponents() {
     `;
 
     // ----------------------------------------------------
-    // 5. Inject Floating WhatsApp Button
+    // 5. Inject Floating WhatsApp Button (Strictly Bottom-Right)
     // ----------------------------------------------------
     let floatContainer = document.getElementById('solvitas-floating-widgets');
     if (!floatContainer) {

@@ -11,9 +11,9 @@ const SOLVITAS_CONFIG = {
         tagline: "SEBI Registered Research Analyst",
         shortDesc: "Independent, data-driven, and SEBI-compliant equity & derivatives research for serious traders and investors.",
         sebiRegNumber: "INH000023931",
-        sebiCategory: "Research Analyst (RA)",
-        sebiValidity: "Perpetual / Active",
-        cin: "U72900MH2023PTC409812",
+        sebiCategory: "Non-Individual (Research Analyst)",
+        sebiValidity: "Perpetual",
+        cin: "U67190MH2024PTC428910",
         websiteUrl: "https://solvitasanalytics.com",
     },
 
@@ -25,17 +25,18 @@ const SOLVITAS_CONFIG = {
         complianceEmail: "compliance@solvitasanalytics.com",
         grievanceEmail: "grievance@solvitasanalytics.com",
         careersEmail: "careers@solvitasanalytics.com",
-        workingHours: "Mon - Sat 09:00–18:00",
-        workingDays: "Monday to Saturday",
-        whatsappNumber: "919137295340",
+        workingHours: "Mon-Sat, 9:00AM-6:00PM",
+        sebiWorkingHours: "Mon-Fri, 9 AM – 5 PM",
+        whatsappNumber: "+91 9137295340",
+        whatsappRaw: "919137295340",
         whatsappUrl: "https://wa.me/919137295340?text=Hello%20Solvitas%20Analytics,%20I%20am%20interested%20in%20your%20SEBI%20Research%20Services.",
     },
 
     // Office Addresses
     addresses: {
-        registered: "Flat No. 204, Building A-2, Shanti Nagar, Sector 4, Mira Road East, Thane, Maharashtra – 401107",
-        corporate: "Unit 402, Quantum Towers, Off SV Road, Malad West, Mumbai, Maharashtra – 400064",
-        nearestSebiOffice: "SEBI Bhavan, Plot No. C4-A, 'G' Block, Bandra-Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra"
+        registered: "Office No B 1904, Arihant Aura, Sanpada, Navi Mumbai, Maharashtra, India – 400705",
+        corporate: "Office No B 1904, Arihant Aura, Sanpada, Navi Mumbai, Maharashtra, India – 400705",
+        nearestSebiOffice: "SEBI Bhavan, Plot No. C4-A, G Block, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra, India - 400051"
     },
 
     // Verified Banking & Payment Information
@@ -68,8 +69,10 @@ const SOLVITAS_CONFIG = {
     social: {
         facebook: "https://facebook.com/solvitasanalytics",
         instagram: "https://instagram.com/solvitasanalytics",
-        twitter: "https://twitter.com/solvitasanalytics",
+        tiktok: "https://tiktok.com/@solvitasanalytics",
         linkedin: "https://linkedin.com/company/solvitasanalytics",
+        snapchat: "https://snapchat.com/add/solvitasanalytics",
+        twitter: "https://twitter.com/solvitasanalytics",
         youtube: "https://youtube.com/@solvitasanalytics"
     },
 
@@ -78,9 +81,15 @@ const SOLVITAS_CONFIG = {
         scoresPortalUrl: "https://scores.sebi.gov.in",
         smartOdrPortalUrl: "https://smartodr.in",
         sebiWebsiteUrl: "https://www.sebi.gov.in",
+        nseWebsiteUrl: "https://www.nseindia.com",
+        bseWebsiteUrl: "https://www.bseindia.com",
+        mcxWebsiteUrl: "https://www.mcxindia.com",
+        nsdlWebsiteUrl: "https://nsdl.co.in",
+        cdslWebsiteUrl: "https://www.cdslindia.com",
+        rbiWebsiteUrl: "https://www.rbi.org.in",
         ckycPortalUrl: "https://www.ckycindia.in",
         grievanceRedressalDays: "30 Days",
-        disclaimerSummary: "Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."
+        disclaimerSummary: "Registration granted by SEBI, Enlistment as RA with Exchange and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."
     },
 
     // Navigation Menus
@@ -94,28 +103,33 @@ const SOLVITAS_CONFIG = {
             { title: "User Consent", href: "user-agreement.html" }
         ],
         servicesMenu: [
-            { title: "Equity Research", href: "services/equity-research.html", icon: "fa-chart-line" },
-            { title: "Derivatives Research", href: "services/derivatives-research.html", icon: "fa-bolt" },
-            { title: "Commodity Research", href: "services/commodity-research.html", icon: "fa-coins" },
+            { title: "Equity", href: "services/equity-research.html", icon: "fa-chart-line" },
+            { title: "Derivatives", href: "services/derivatives-research.html", icon: "fa-bolt" },
+            { title: "Alternative Investments Fund (AIF)", href: "services/aif-research.html", icon: "fa-gem" },
+            { title: "Fixed Income (Bonds & FDs)", href: "services/fixed-income-research.html", icon: "fa-building-columns" },
+            { title: "IPOs", href: "services/ipo-research.html", icon: "fa-rocket" },
             { title: "Mutual Funds", href: "services/mutual-funds-research.html", icon: "fa-pie-chart" },
-            { title: "IPO Research", href: "services/ipo-research.html", icon: "fa-rocket" },
-            { title: "Fixed Income", href: "services/fixed-income-research.html", icon: "fa-building-columns" },
-            { title: "AIF Research", href: "services/aif-research.html", icon: "fa-gem" }
+            { title: "Commodity", href: "services/commodity-research.html", icon: "fa-coins" }
         ],
-        legalMenu: [
-            { title: "Investor Charter", href: "investor-charter.html" },
-            { title: "Complaint Board", href: "complaint-board.html" },
-            { title: "Complaints Redressal", href: "complaints-redressal.html" },
-            { title: "Compliance Audit", href: "compliance-audit.html" },
-            { title: "Grievance Redressal", href: "grievance-redressal.html" },
-            { title: "SEBI Disclosure", href: "disclosure.html" },
-            { title: "Disclaimer", href: "disclaimer.html" },
-            { title: "Service Disclosure", href: "service-disclosure.html" },
+        companyMenu: [
+            { title: "About", href: "about.html" },
             { title: "Bank Details", href: "bank-details.html" },
+            { title: "Career", href: "careers.html" },
+            { title: "Contact", href: "contact.html" },
+            { title: "Investor Charter", href: "investor-charter.html" }
+        ],
+        termsMenu: [
+            { title: "Client Consent Form", href: "user-agreement.html" },
+            { title: "Disclaimer", href: "disclaimer.html" },
+            { title: "Disclosure", href: "disclosure.html" },
+            { title: "Service Disclosure", href: "service-disclosure.html" },
             { title: "Privacy Policy", href: "privacy-policy.html" },
             { title: "Refund Policy", href: "refund-policy.html" },
+            { title: "Complaints", href: "complaint-board.html" },
             { title: "Terms & Conditions", href: "terms-and-conditions.html" },
-            { title: "Careers", href: "careers.html" }
+            { title: "Compliance Audit", href: "compliance-audit.html" },
+            { title: "Complaints Redressal", href: "complaints-redressal.html" },
+            { title: "Grievance Redressal", href: "grievance-redressal.html" }
         ]
     }
 };
