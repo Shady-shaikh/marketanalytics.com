@@ -20,18 +20,24 @@
     <div id="solvitas-topbar"></div>
     <div id="solvitas-header"></div>
 
-    <main class="min-h-screen py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main class="min-h-screen py-16 relative overflow-hidden bg-gradient-to-b from-white via-teal-50/20 to-slate-50">
+        <!-- Ambient Glows -->
+        <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-teal-200/40 via-emerald-100/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[450px] h-[450px] bg-gradient-to-tr from-cyan-100/30 via-indigo-100/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             
             <!-- Page Header -->
             <div class="mb-10 text-center">
-                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-4">
-                    <i class="fa-solid fa-file-signature text-teal-600"></i>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-xs animate-float">
+                    <span class="w-2 h-2 rounded-full bg-teal-500 animate-beacon"></span>
                     <span>Mandatory Regulatory Documentation</span>
-                </span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900">User Agreement & Client Consent</h1>
-                <p class="text-slate-600 text-sm mt-2">
-                    Please read these terms and declarations carefully before subscribing to Solvitas Analytics research services.
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    User Agreement & <span class="bg-gradient-to-r from-teal-700 via-emerald-600 to-indigo-700 bg-clip-text text-transparent">Client Consent</span>
+                </h1>
+                <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-xl mx-auto leading-relaxed">
+                    Please review these terms, risk warnings, and regulatory declarations carefully before completing your research service onboarding.
                 </p>
             </div>
 

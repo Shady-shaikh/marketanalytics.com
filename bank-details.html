@@ -22,18 +22,22 @@
 
     <main class="min-h-screen">
 
-        <!-- Hero Section -->
-        <section class="py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-teal-50/20 border-b border-slate-200">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6">
-                    <i class="fa-solid fa-shield-check text-teal-600"></i>
+        <!-- Hero Section with Animated Ambient Accents -->
+        <section class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white via-teal-50/25 to-slate-50 border-b border-slate-200">
+            <!-- Animated Ambient Glows -->
+            <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-teal-200/40 via-emerald-100/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow"></div>
+            <div class="absolute bottom-0 left-1/4 w-[450px] h-[450px] bg-gradient-to-tr from-cyan-100/30 via-indigo-100/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6 shadow-xs animate-float">
+                    <span class="w-2 h-2 rounded-full bg-teal-500 animate-beacon"></span>
                     <span>Verified &bull; SEBI-Compliant &bull; Safe</span>
-                </span>
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-                    Secure Payment Options
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
+                    Official & Verified <span class="bg-gradient-to-r from-teal-700 via-emerald-600 to-indigo-700 bg-clip-text text-transparent">Payment Gateways</span>
                 </h1>
                 <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-                    Solvitas Analytics accepts payments only through officially approved and verified bank accounts and SEBI-registered UPI handles. Please ensure payments are made strictly to the details mentioned below.
+                    Solvitas Analytics accepts subscription fees strictly through officially verified corporate bank accounts and SEBI-designated UPI handles with zero intermediary risk.
                 </p>
             </div>
         </section>

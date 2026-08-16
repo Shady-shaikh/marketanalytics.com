@@ -22,19 +22,33 @@
 
     <main class="min-h-screen">
 
-        <!-- Hero Section -->
-        <section class="py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-teal-50/20 border-b border-slate-200">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6">
-                    <i class="fa-solid fa-certificate text-teal-600"></i>
+        <!-- Hero Section with Animated Ambient Accents -->
+        <section class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white via-teal-50/25 to-slate-50 border-b border-slate-200">
+            <!-- Animated Ambient Glows -->
+            <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-teal-200/40 via-emerald-100/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow"></div>
+            <div class="absolute bottom-0 left-1/4 w-[450px] h-[450px] bg-gradient-to-tr from-cyan-100/30 via-indigo-100/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6 shadow-xs animate-float">
+                    <span class="w-2 h-2 rounded-full bg-teal-500 animate-beacon"></span>
                     <span>SEBI Registered Research Analyst &bull; INH000023931</span>
-                </span>
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-                    SEBI-Compliant Premium Research Services
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
+                    SEBI-Compliant <span class="bg-gradient-to-r from-teal-700 via-emerald-600 to-cyan-700 bg-clip-text text-transparent">Research Offerings</span>
                 </h1>
-                <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-                    Transparent, research-backed insights across Intraday, Options, Futures and Equity. No assured returns. No execution. Research strictly aligned with SEBI RA regulations.
+                <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+                    Transparent, data-backed technical intelligence across Intraday, Options, Futures, and Positional Equities. Strictly aligned with SEBI RA guidelines with zero false promises.
                 </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#offerings" class="btn-primary btn-shimmer py-3 px-8 text-sm">
+                        <span>Explore Research Packages</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                    <button onclick="openLeadModal('Services Hero')" class="btn-secondary py-3 px-7 text-sm font-bold">
+                        <i class="fa-solid fa-headset text-teal-600"></i>
+                        <span>Talk to Analyst</span>
+                    </button>
+                </div>
             </div>
         </section>
 

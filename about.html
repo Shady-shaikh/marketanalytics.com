@@ -22,37 +22,56 @@
 
     <main class="min-h-screen">
 
-        <!-- Hero Section -->
-        <section class="py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-teal-50/20 border-b border-slate-200">
+        <!-- Hero Section with Dynamic Background & Floating Card -->
+        <section class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white via-teal-50/20 to-slate-50 border-b border-slate-200">
+            <!-- Animated Ambient Glows -->
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-teal-200/40 via-emerald-100/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow"></div>
+            <div class="absolute bottom-0 left-0 w-[450px] h-[450px] bg-gradient-to-tr from-indigo-100/30 via-cyan-100/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-12 gap-12 items-center">
                     <div class="md:col-span-7">
-                        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6">
-                            <i class="fa-solid fa-certificate text-teal-600"></i>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6 shadow-xs animate-float">
+                            <span class="w-2 h-2 rounded-full bg-teal-500 animate-beacon"></span>
                             <span>SEBI Registered Research Analyst &bull; INH000023931</span>
-                        </span>
-                        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
-                            We are <span class="text-teal-700">Solvitas Analytics</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                            We are <span class="bg-gradient-to-r from-teal-700 via-emerald-600 to-indigo-700 bg-clip-text text-transparent">Solvitas Analytics</span>
                         </h1>
-                        <p class="text-slate-600 text-lg leading-relaxed mb-6 max-w-xl">
-                            A research-first, compliance-focused analytics firm delivering transparent, structured insights for responsible investors.
+                        <p class="text-slate-600 text-lg leading-relaxed mb-8 max-w-xl">
+                            A research-first, compliance-focused analytics firm delivering transparent, data-driven equity and derivatives insights for responsible market participants.
                         </p>
+                        <div class="flex flex-wrap gap-4">
+                            <button onclick="openLeadModal('About Page CTA')" class="btn-primary btn-shimmer py-3 px-8 text-sm">
+                                <span>Get in Touch</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            <a href="services.html" class="btn-secondary py-3 px-7 text-sm font-bold">
+                                <span>Explore Offerings</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="md:col-span-5">
-                        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl">
-                            <div class="grid grid-cols-3 gap-4 text-center divide-x divide-slate-100">
+                    <div class="md:col-span-5 relative">
+                        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-2xl animate-float-reverse relative">
+                            <!-- Floating mini pill -->
+                            <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-gradient-to-r from-teal-600 to-emerald-600 text-white text-[11px] font-bold shadow-md flex items-center gap-1.5">
+                                <i class="fa-solid fa-certificate text-amber-200"></i>
+                                <span>Regulated Entity</span>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-4 text-center divide-x divide-slate-100 mt-2">
                                 <div>
                                     <div class="text-xs text-slate-400 font-semibold uppercase">Experience</div>
-                                    <div class="text-2xl font-bold text-slate-900 mt-1">5+ yrs*</div>
+                                    <div class="text-2xl font-extrabold text-slate-900 mt-1" data-counter-target="5" data-counter-suffix="+ yrs">5+ yrs*</div>
                                 </div>
                                 <div>
                                     <div class="text-xs text-slate-400 font-semibold uppercase">Coverage</div>
-                                    <div class="text-2xl font-bold text-teal-700 mt-1">Multi-Asset</div>
+                                    <div class="text-2xl font-extrabold text-teal-700 mt-1">Multi-Asset</div>
                                 </div>
                                 <div>
                                     <div class="text-xs text-slate-400 font-semibold uppercase">Approach</div>
-                                    <div class="text-2xl font-bold text-indigo-700 mt-1">Process-Led</div>
+                                    <div class="text-2xl font-extrabold text-indigo-700 mt-1">Process-Led</div>
                                 </div>
                             </div>
                             <p class="mt-6 text-[11px] text-slate-400 leading-relaxed border-t border-slate-100 pt-4 text-center">

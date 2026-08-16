@@ -20,17 +20,21 @@
     <div id="solvitas-topbar"></div>
     <div id="solvitas-header"></div>
 
-    <main class="min-h-screen py-16">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <main class="min-h-screen py-16 relative overflow-hidden bg-gradient-to-b from-white via-teal-50/20 to-slate-50">
+        <!-- Ambient Glows -->
+        <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-teal-200/40 via-emerald-100/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[450px] h-[450px] bg-gradient-to-tr from-cyan-100/30 via-indigo-100/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative">
 
             <!-- Hero Header -->
             <div class="text-center">
-                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-4">
-                    <i class="fa-solid fa-scroll text-teal-600"></i>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-xs animate-float">
+                    <span class="w-2 h-2 rounded-full bg-teal-500 animate-beacon"></span>
                     <span>SEBI Mandated Document</span>
-                </span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
-                    Investor Charter – <span class="text-teal-700">Research Analyst (RA)</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Investor Charter – <span class="bg-gradient-to-r from-teal-700 via-emerald-600 to-indigo-700 bg-clip-text text-transparent">Research Analyst (RA)</span>
                 </h1>
                 <p class="text-slate-600 text-sm sm:text-base max-w-3xl mx-auto mt-3 leading-relaxed">
                     This Investor Charter defines the rights, responsibilities, and services available to investors engaging with SEBI-Registered Research Analysts, ensuring transparency, ethics, and investor protection.
