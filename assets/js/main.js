@@ -1,6 +1,7 @@
 /**
  * Solvitas Analytics - Main Interactive Controller
- * Handles Lead Modal, AJAX Form Submissions, Toasts, Pricing Filters, Signatures & Dynamic Animations.
+ * Handles Lead Modal, AJAX Form Submissions, Toasts, Pricing Filters, Signatures,
+ * Interactive Stock Market Canvas Background Animation & Scroll Reveal.
  */
 
 // ----------------------------------------------------
@@ -81,7 +82,7 @@ function showSolvitasToast(message, type = 'success') {
 }
 
 // ----------------------------------------------------
-// 3. AJAX Lead Capture & Email Dispatch Handler
+// 3. AJAX Lead Capture & Direct Email Handler
 // ----------------------------------------------------
 async function handleLeadFormSubmit(event, form) {
     if (event) event.preventDefault();
@@ -104,7 +105,6 @@ async function handleLeadFormSubmit(event, form) {
     const isFileProtocol = window.location.protocol === 'file:';
 
     if (isFileProtocol) {
-        // Handle file:/// protocol gracefully without throwing CORS/security errors
         await new Promise(resolve => setTimeout(resolve, 500));
 
         showSolvitasToast(
@@ -150,7 +150,6 @@ async function handleLeadFormSubmit(event, form) {
         }
     } catch (err) {
         console.warn('Lead Submission Fallback:', err);
-        // Clean fallback response
         showSolvitasToast(`Thank you, ${dataObj.name || 'Investor'}! Your request has been recorded. Our research team will reach out to you shortly.`, 'success');
         form.reset();
         closeLeadModal();
@@ -162,20 +161,127 @@ async function handleLeadFormSubmit(event, form) {
     }
 }
 
-// Attach automatic submit listeners to all forms with data-lead-form
+// ----------------------------------------------------
+// 4. Interactive Stock Market Hero Canvas Animation
+// ----------------------------------------------------
+function initStockMarketHeroCanvas() {
+    const canvases = document.querySelectorAll('.hero-stock-canvas');
+    if (canvases.length === 0) return;
+
+    canvases.forEach(canvas => {
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        function setSize() {
+            if (!canvas.parentElement) return;
+            width = canvas.width = canvas.parentElement.offsetWidth;
+            height = canvas.height = canvas.parentElement.offsetHeight;
+        }
+        setSize();
+
+        const particles = [];
+        const particleCount = Math.min(Math.floor((width * height) / 16000), 38);
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = -(Math.random() * 0.6 + 0.25); // Gentle upward bull market drift
+                this.radius = Math.random() * 2 + 1;
+                this.color = Math.random() > 0.35 ? '#0D9488' : '#00D09C';
+                this.alpha = Math.random() * 0.28 + 0.12;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.y < 0) this.y = height;
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.alpha;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        window.addEventListener('resize', setSize);
+
+        function renderFrame() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw subtle matrix coordinate grid
+            ctx.strokeStyle = '#0D9488';
+            ctx.lineWidth = 0.5;
+            ctx.globalAlpha = 0.035;
+            const gridSpacing = 90;
+            for (let x = 0; x < width; x += gridSpacing) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, height);
+                ctx.stroke();
+            }
+            for (let y = 0; y < height; y += gridSpacing) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+
+            // Draw and link constellation nodes
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 115) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = '#0D9488';
+                        ctx.globalAlpha = (1 - dist / 115) * 0.12;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(renderFrame);
+        }
+
+        renderFrame();
+    });
+}
+
+// ----------------------------------------------------
+// 5. DOM Initialization
+// ----------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
-    // ----------------------------------------------------
-    // Form Event Listeners
-    // ----------------------------------------------------
+    // 1. Initialize Canvas Background Animation in Hero
+    initStockMarketHeroCanvas();
+
+    // 2. Form Event Listeners
     document.querySelectorAll('form[data-lead-form]').forEach(form => {
         form.addEventListener('submit', function(e) {
             handleLeadFormSubmit(e, this);
         });
     });
 
-    // ----------------------------------------------------
-    // Pricing / Category Filter Tabs
-    // ----------------------------------------------------
+    // 3. Pricing / Category Filter Tabs
     const filterButtons = document.querySelectorAll('.filter-btn');
     const filterCards = document.querySelectorAll('[data-category]');
 
@@ -199,9 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ----------------------------------------------------
-    // Digital Signature Canvas (User Agreement)
-    // ----------------------------------------------------
+    // 4. Digital Signature Canvas (User Agreement)
     const canvas = document.getElementById('sigPad');
     const clearBtn = document.getElementById('sigClear');
     const sigInput = document.getElementById('signature_data');
@@ -269,9 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ----------------------------------------------------
-    // Dynamic Metric Counters Animation
-    // ----------------------------------------------------
+    // 5. Dynamic Metric Counters Animation
     const statCounters = document.querySelectorAll('[data-counter-target]');
     if (statCounters.length > 0) {
         const observer = new IntersectionObserver((entries, obs) => {
@@ -280,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const el = entry.target;
                     const target = parseInt(el.getAttribute('data-counter-target'), 10) || 0;
                     const suffix = el.getAttribute('data-counter-suffix') || '';
-                    const duration = 1500;
+                    const duration = 1400;
                     const startTime = performance.now();
 
                     function updateCount(currentTime) {
@@ -304,5 +406,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.2 });
 
         statCounters.forEach(counter => observer.observe(counter));
+    }
+
+    // 6. Scroll-Triggered Reveal Animations
+    const cardsToReveal = document.querySelectorAll('.sol-card, .pricing-card');
+    if (cardsToReveal.length > 0) {
+        const scrollObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cardsToReveal.forEach(card => {
+            card.classList.add('reveal-on-scroll');
+            scrollObserver.observe(card);
+        });
     }
 });

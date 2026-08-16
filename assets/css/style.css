@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
    INTERACTIVE ANIMATIONS & KEYFRAMES
    ========================================================================== */
 
-/* 1. Subtle Floating Physics */
+/* 1. Floating Physics */
 @keyframes floatSmooth {
     0%, 100% {
         transform: translateY(0px) rotate(0deg);
@@ -233,20 +233,26 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 }
 
-/* 6. Smooth Entrance Animation Utility */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(24px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* 6. Scroll Reveal Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.fade-in-up {
-    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Canvas Stock Market Background */
+.hero-stock-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* ==========================================================================

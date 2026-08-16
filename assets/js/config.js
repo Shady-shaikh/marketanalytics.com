@@ -26,7 +26,7 @@ const SOLVITAS_CONFIG = {
         grievanceEmail: "grievance@solvitasanalytics.com",
         careersEmail: "careers@solvitasanalytics.com",
         workingHours: "Mon-Sat, 9:00AM-6:00PM",
-        sebiWorkingHours: "Mon-Fri, 9 AM – 5 PM",
+        sebiWorkingHours: "Mon–Fri, 9 AM – 5 PM",
         whatsappNumber: "+91 9137295340",
         whatsappRaw: "919137295340",
         whatsappUrl: "https://wa.me/919137295340?text=Hello%20Solvitas%20Analytics,%20I%20am%20interested%20in%20your%20SEBI%20Research%20Services.",
@@ -36,7 +36,7 @@ const SOLVITAS_CONFIG = {
     addresses: {
         registered: "Office No B 1904, Arihant Aura, Sanpada, Navi Mumbai, Maharashtra, India – 400705",
         corporate: "Office No B 1904, Arihant Aura, Sanpada, Navi Mumbai, Maharashtra, India – 400705",
-        nearestSebiOffice: "SEBI Bhavan, Plot No. C4-A, G Block, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra, India - 400051"
+        nearestSebiOffice: "Office No B 1904, Arihant Aura, Sanpada, Navi Mumbai, Maharashtra, India – 400705"
     },
 
     // Verified Banking & Payment Information
