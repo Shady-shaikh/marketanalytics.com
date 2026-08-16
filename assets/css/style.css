@@ -1,6 +1,6 @@
 /* ==========================================================================
-   SOLVITAS ANALYTICS - STOCK MARKET WEALTH THEME DESIGN SYSTEM
-   Professional, High-Trust Indian Financial Market Aesthetics
+   SOLVITAS ANALYTICS - ULTRA-MODERN STOCK MARKET DESIGN SYSTEM
+   Professional Wealth Theme with Dynamic Animations & Micro-Interactions
    ========================================================================== */
 
 :root {
@@ -35,6 +35,7 @@
     --sol-shadow-lg: 0 10px 20px -3px rgba(6, 26, 47, 0.08), 0 4px 6px -4px rgba(6, 26, 47, 0.04);
     --sol-shadow-xl: 0 20px 30px -5px rgba(6, 26, 47, 0.10), 0 8px 10px -6px rgba(6, 26, 47, 0.04);
     --sol-shadow-glow: 0 0 25px rgba(13, 148, 136, 0.20);
+    --sol-shadow-glow-bull: 0 0 20px rgba(0, 208, 156, 0.35);
 }
 
 /* Global Reset & Smooth Scroll */
@@ -59,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* Navigation Links */
+/* Navigation Links with animated underline */
 .nav-link {
     position: relative;
     color: #334155;
@@ -81,37 +82,201 @@ h1, h2, h3, h4, h5, h6 {
     height: 2.5px;
     background: linear-gradient(90deg, var(--sol-teal), var(--sol-emerald));
     border-radius: 2px;
-    transition: width 0.3s ease;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover::after, .nav-link.active::after {
     width: 100%;
 }
 
-/* Clean Stock Market Card Styles */
+/* ==========================================================================
+   INTERACTIVE ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+/* 1. Subtle Floating Physics */
+@keyframes floatSmooth {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(0.5deg);
+    }
+}
+
+@keyframes floatReverse {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(8px) rotate(-0.5deg);
+    }
+}
+
+.animate-float {
+    animation: floatSmooth 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+    animation: floatReverse 7s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: floatSmooth 8s ease-in-out infinite;
+}
+
+/* 2. Pulse Glow & Radar Waves */
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.08);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 5s ease-in-out infinite;
+}
+
+@keyframes beaconPing {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+    70%, 100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+.animate-beacon {
+    position: relative;
+}
+
+.animate-beacon::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: #00D09C;
+    animation: beaconPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* 3. Hero SVG Trend Line Dash Animation */
+@keyframes chartDash {
+    0% {
+        stroke-dashoffset: 1200;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.animated-stock-line {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: chartDash 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 4. Glowing Ambient Mesh Background */
+@keyframes ambientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-animated-mesh {
+    background: linear-gradient(125deg, #FFFFFF 0%, #F0FDFA 30%, #F8FAFC 70%, #ECFDF5 100%);
+    background-size: 200% 200%;
+    animation: ambientShift 15s ease infinite;
+}
+
+/* 5. Shimmer Light Swipe on Buttons */
+@keyframes buttonShimmer {
+    0% {
+        transform: translateX(-100%) rotate(25deg);
+    }
+    100% {
+        transform: translateX(250%) rotate(25deg);
+    }
+}
+
+.btn-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: buttonShimmer 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* 6. Smooth Entrance Animation Utility */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   CARDS & COMPONENTS
+   ========================================================================== */
+
+/* Modern Elevated Cards */
 .sol-card {
     background: #FFFFFF;
     border: 1px solid var(--sol-border);
     border-radius: 1.25rem;
     padding: 2rem;
     box-shadow: var(--sol-shadow-sm);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .sol-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     box-shadow: var(--sol-shadow-xl);
-    border-color: #94A3B8;
+    border-color: #CBD5E1;
 }
 
-/* Pricing Cards & Grid Alignment */
+/* Pricing / Service Cards */
 .pricing-card {
     background: #FFFFFF;
     border: 1px solid var(--sol-border);
     border-radius: 1.25rem;
     padding: 2rem;
     box-shadow: var(--sol-shadow-md);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -119,7 +284,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pricing-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     box-shadow: var(--sol-shadow-xl);
     border-color: var(--sol-teal);
 }
@@ -139,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #FFFFFF;
     border: 1px solid var(--sol-border);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     white-space: nowrap;
 }
@@ -148,6 +313,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #F1F5F9;
     color: var(--sol-navy);
     border-color: #CBD5E1;
+    transform: translateY(-1px);
 }
 
 .filter-btn.active {
@@ -176,7 +342,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.01);
     box-shadow: 0 8px 24px rgba(13, 148, 136, 0.45);
     background: linear-gradient(135deg, #0F766E 0%, #044E39 100%);
     color: #FFFFFF;
@@ -203,12 +369,13 @@ h1, h2, h3, h4, h5, h6 {
     background: #F8FAFC;
     border-color: #94A3B8;
     transform: translateY(-2px);
+    box-shadow: var(--sol-shadow-md);
 }
 
 /* Form Controls */
 .sol-input {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.75rem 1rem;
     border-radius: 0.625rem;
     border: 1px solid var(--sol-border);
     background: #FFFFFF;
@@ -244,54 +411,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.12) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.65);
+    transform: scale(1.12) rotate(6deg);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.65);
     color: #FFFFFF;
-}
-
-/* Animated Research Trend Wave */
-@keyframes chartDash {
-    0% {
-        stroke-dashoffset: 1000;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-.animated-stock-line {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: chartDash 3s ease-out forwards;
-}
-
-/* Floating Badges & Micro-Animations */
-@keyframes floatSlow {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-.animate-float-slow {
-    animation: floatSlow 6s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-    0%, 100% {
-        opacity: 0.35;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(1.05);
-    }
-}
-
-.animate-pulse-glow {
-    animation: pulseGlow 4s ease-in-out infinite;
 }
 
 /* Modal Popup Styles */
@@ -366,12 +488,12 @@ h1, h2, h3, h4, h5, h6 {
 .sol-toast {
     pointer-events: auto;
     min-width: 320px;
-    max-width: 420px;
+    max-width: 440px;
     padding: 1rem 1.25rem;
-    border-radius: 0.75rem;
+    border-radius: 0.85rem;
     background: #FFFFFF;
     border-left: 4px solid var(--sol-teal);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
