@@ -6,9 +6,3 @@ Thumbs.db
 # IDE & Editors
 .vscode/
 .idea/
-
-# Local databases and logs (Security & Privacy)
-data/*.db
-data/*.sqlite
-data/*.log
-!data/.htaccess

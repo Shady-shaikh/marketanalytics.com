@@ -1,7 +1,7 @@
 <?php
 /**
- * Solvitas Analytics - Centralized PHP Configuration & Settings
- * Zero-cost, self-hosted Lead Capture System
+ * Solvitas Analytics - Centralized Configuration
+ * Direct Email Notification Settings
  */
 
 // Set Default Timezone for India
@@ -17,18 +17,8 @@ return [
     'site_url' => 'https://solvitasanalytics.com',
     'sebi_reg' => 'INH000023931',
 
-    // Administrator Notification Email(s)
+    // Recipient & Sender Email Addresses
     'admin_email' => 'support@solvitasanalytics.com',
     'from_email' => 'noreply@solvitasanalytics.com',
     'send_email_alerts' => true,
-
-    // Database & CSV Storage Paths
-    'db_path' => dirname(__DIR__) . '/data/leads.db',
-    'csv_path' => dirname(__DIR__) . '/data/leads.csv',
-
-    // Admin Portal Credentials
-    // Default password: Admin@Solvitas2025 (Change anytime)
-    'admin_username' => 'admin',
-    'admin_password' => 'Admin@Solvitas2025',
-    'admin_session_key' => 'solvitas_admin_logged_in',
 ];

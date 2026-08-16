@@ -1,8 +1,0 @@
-# Protect SQLite database and CSV files from direct download
-<FilesMatch "\.(db|sqlite|sqlite3|csv|json|log)$">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
-
-Options -Indexes
-Deny from all
